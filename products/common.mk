@@ -1,3 +1,8 @@
+# Generic product
+PRODUCT_NAME := summit
+PRODUCT_BRAND := summit
+PRODUCT_DEVICE := generic
+
 @@ -24,6 +24,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
      persist.sys.dun.override=0 \
      ro.setupwizard.network_required=false \
