@@ -48,10 +48,10 @@ EXTRAS="$2"
 
 if [ $ARCH = "64" ]; then
   # Get build version
-  MAJOR=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MAJOR := *' | sed  's/ROM_VERSION_MAJOR := //g')
-  MINOR=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MINOR := *' | sed  's/ROM_VERSION_MINOR := //g')
-  MAINTENANCE=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_MAINTENANCE := *' | sed  's/ROM_VERSION_MAINTENANCE := //g')
-  TAG=$(cat $DIR/vendor/pa/vendor.mk | grep 'ROM_VERSION_TAG := *' | sed  's/ROM_VERSION_TAG := //g')
+  MAJOR=$(cat $DIR/vendor/summit/vendor.mk | grep 'ROM_VERSION_MAJOR := *' | sed  's/ROM_VERSION_MAJOR := //g')
+  MINOR=$(cat $DIR/vendor/summit/vendor.mk | grep 'ROM_VERSION_MINOR := *' | sed  's/ROM_VERSION_MINOR := //g')
+  MAINTENANCE=$(cat $DIR/summit/pa/vendor.mk | grep 'ROM_VERSION_MAINTENANCE := *' | sed  's/ROM_VERSION_MAINTENANCE := //g')
+  TAG=$(cat $DIR/vendor/summit/vendor.mk | grep 'ROM_VERSION_TAG := *' | sed  's/ROM_VERSION_TAG := //g')
 
   if [ -n "$TAG" ]; then
           VERSION=$MAJOR.$MINOR$MAINTENANCE-$TAG
@@ -71,7 +71,7 @@ if [ $ARCH = "64" ]; then
   # Get start time
   res1=$(date +%s.%N)
 
-  echo -e "${cya}Building ${bldcya}AOSPA $VERSION for $DEVICE ${txtrst}";
+  echo -e "${cya}Building ${bldcya}SUMMIT $VERSION for $DEVICE ${txtrst}";
   echo -e "${bldgrn}Start time: $(date) ${txtrst}"
 
   # Decide what command to execute
@@ -114,7 +114,7 @@ if [ $ARCH = "64" ]; then
   if [ -n "${INTERACTIVE}" ]; then
           echo -e "${bldblu}Dropping to interactive shell${txtrst}"
           echo -en "${bldblu}Remeber to lunch you device:"
-          if [ "${VENDOR}" == "pa" ]; then
+          if [ "${VENDOR}" == "summit" ]; then
                   echo -e "[${bldgrn}lunch pa_$DEVICE-userdebug${bldblu}]${txtrst}"
           else
                   echo -e "[${bldgrn}lunch full_$DEVICE-userdebug${bldblu}]${txtrst}"
