@@ -1,2 +1,1 @@
 add_lunch_combo pa_find7-userdebug
-add_lunch_combo pa_find7s-userdebug
