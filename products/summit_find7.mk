@@ -14,15 +14,15 @@
 
 # Check for target product
 
-ifeq (pa_find7,$(TARGET_PRODUCT))
+ifeq (summit_find7,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xxhdpi
+OVERLAY_TARGET := summit_xxhdpi
 
 # Inherit telephony common stuff
-$(call inherit-product, vendor/pa/configs/telephony.mk)
+$(call inherit-product, vendor/summit/configs/telephony.mk)
 
-# Include AOSPA common configuration
+# Include summit common configuration
 include vendor/pa/main.mk
 
 # Inherit device configuration
@@ -31,7 +31,7 @@ $(call inherit-product, device/oppo/find7/full_find7.mk)
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_find7
+PRODUCT_NAME := summit_find7
 PRODUCT_DEVICE := find7
 PRODUCT_BRAND := oppo
 PRODUCT_MANUFACTURER := OPPO
