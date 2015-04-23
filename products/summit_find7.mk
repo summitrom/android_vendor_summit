@@ -23,7 +23,7 @@ OVERLAY_TARGET := summit_xxhdpi
 $(call inherit-product, vendor/summit/configs/telephony.mk)
 
 # Include summit common configuration
-include vendor/pa/main.mk
+include vendor/summit/main.mk
 
 # Inherit device configuration
 $(call inherit-product, device/oppo/find7/full_find7.mk)
